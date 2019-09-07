@@ -1,13 +1,31 @@
 // --- Directions
-// Given an integer, return an integer that is the reverse
-// ordering of numbers.
+// Given a string, return a new string with the reversed
+// order of characters
 // --- Examples
-//   reverseInt(15) === 51
-//   reverseInt(981) === 189
-//   reverseInt(500) === 5
-//   reverseInt(-15) === -51
-//   reverseInt(-90) === -9
+//   reverse('apple') === 'leppa'
+//   reverse('hello') === 'olleh'
+//   reverse('Greetings!') === '!sgniteerG'
 
-function reverseInt(n) {}
+function reverse(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
 
-module.exports = reverseInt;
+module.exports = reverse;
+
+
+// function reverse(str) {
+//   return str
+//     .split('')
+//     .reverse()
+//     .join('');
+// }
+
+// function reverse(str) {
+//   let reversed = '';
+//
+//   for (let character of str) {
+//     reversed = character + reversed;
+//   }
+//
+//   return reversed;
+// }
