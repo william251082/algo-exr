@@ -7,7 +7,21 @@
 //     const q = new Queue();
 //     q.add(1);
 //     q.remove(); // returns 1;
+// For Queue in js, we only expose unshift and pop
+// Queue wraps an array
 
-class Queue {}
+class Queue {
+    constructor() {
+        this.data = [];
+    }
+
+    add(record) {
+        this.data.unshift(record);
+    }
+
+    remove() {
+        return this.data.pop();
+    }
+}
 
 module.exports = Queue;
