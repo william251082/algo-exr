@@ -4,6 +4,8 @@
 // one to be returned) from the queue *without*
 // removing it.
 
+// FIFO
+
 class Queue {
   constructor() {
     this.data = [];
@@ -15,6 +17,11 @@ class Queue {
 
   remove() {
     return this.data.pop();
+  }
+
+  // access the last array element
+  peek() {
+    return this.data[this.data.length - 1];
   }
 }
 
