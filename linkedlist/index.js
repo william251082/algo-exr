@@ -35,14 +35,38 @@ class LinkedList {
     getFirst() {
         return this.head;
     }
+
+    getLast () {
+        if(!this.head) {
+            return null;
+        }
+
+        let node = this.head;
+
+        while (node) {
+
+            if (!node.next) {
+                return node;
+            }
+
+            node = node.next
+        }
+    }
 }
 
 //test
-const nodeOne = new Node(5);
+const nodeOne = new Node('a');
 const list = new LinkedList();
 
 list.head = nodeOne;
 
-console.log(list.getFirst());
+list.insertFirst('hi');
+list.insertFirst('b');
+list.insertFirst('c');
+list.insertFirst('d');
+list.insertFirst('e');
+list.insertFirst('f');
+
+console.log(list.getLast()); // should be a, return the entire Node
 
 module.exports = { Node, LinkedList };
