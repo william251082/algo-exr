@@ -52,6 +52,10 @@ class LinkedList {
             node = node.next
         }
     }
+
+    clear() {
+        this.head = null;
+    }
 }
 
 //test
@@ -67,6 +71,7 @@ list.insertFirst('d');
 list.insertFirst('e');
 list.insertFirst('f');
 
-console.log(list.getLast()); // should be a, return the entire Node
+console.log(list.clear());
+console.log(list);
 
 module.exports = { Node, LinkedList };
