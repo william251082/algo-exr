@@ -60,6 +60,7 @@ module.exports = pyramid;
 //
 //     for (let row = 0; row < n; row++) {
 //         let level = '';
+//         // assemble one row
 //         for (let col = 0; col < 2 * n - 1; col++) {
 //             if (midpoint - row <= col && midpoint + row >= col) { // make sure that current column is in bounds of midpoint - row and midpoint + row
 //                 level += '#';
@@ -67,6 +68,7 @@ module.exports = pyramid;
 //                 level += ' ';
 //             }
 //         }
+//
 //         console.log(level);
 //     }
 // }
