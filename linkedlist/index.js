@@ -31,6 +31,10 @@ class LinkedList {
 
         return counter
     }
+
+    getFirst() {
+        return this.head;
+    }
 }
 
 //test
@@ -38,8 +42,7 @@ const nodeOne = new Node(5);
 const list = new LinkedList();
 
 list.head = nodeOne;
-list.size();
 
-console.log(list.size());
+console.log(list.getFirst());
 
 module.exports = { Node, LinkedList };
