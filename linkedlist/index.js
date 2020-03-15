@@ -113,6 +113,28 @@ class LinkedList {
 
         return null;
     }
+
+    removeAt(index) {
+        if (!this.head) {
+            return;
+        }
+
+        if (index === 0) {
+            this.head = this.head.next;
+            return;
+        }
+
+        const prev = this.getAt(index - 1);
+
+        // handle index that's out of bounds
+        // handle if prev.next.next is null
+        if (!prev || prev.next) {
+            return;
+        }
+
+        // connect to the current next's next
+        prev.next = prev.next.next;
+    }
 }
 
 //test
@@ -128,6 +150,6 @@ list.insertFirst('d');
 list.insertFirst('e');
 list.insertFirst('f');
 
-console.log(list.getAt(5));
+console.log(list.removeAt(5));
 
 module.exports = { Node, LinkedList };
