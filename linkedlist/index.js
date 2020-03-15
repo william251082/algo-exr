@@ -56,6 +56,35 @@ class LinkedList {
     clear() {
         this.head = null;
     }
+
+    removeFirst() {
+        if (!this.head) {
+            return;
+        }
+
+        return this.head = this.head.next;
+    }
+
+    removeLast() {
+        if (!this.head) {
+            return;
+        }
+
+        if (!this.head.next) {
+            this.head = null;
+            return;
+        }
+
+        let prev = this.head;
+        let node = this.head.next;
+
+        while (node.next) {
+            prev = node;
+            node = node.next;
+        }
+
+        prev.next = null;
+    }
 }
 
 //test
@@ -71,7 +100,7 @@ list.insertFirst('d');
 list.insertFirst('e');
 list.insertFirst('f');
 
-console.log(list.clear());
-console.log(list);
+console.log(list.removeLast());
+console.log(list.getLast());
 
 module.exports = { Node, LinkedList };
