@@ -85,6 +85,34 @@ class LinkedList {
 
         prev.next = null;
     }
+
+    insertLast(data) {
+        const last = this.getLast();
+
+        if (last) {
+            // there are some nodes in our chain
+            last.next = new Node(data);
+        } else {
+            // chain is empty
+            return this.head = new Node(data);
+        }
+    }
+
+    getAt(index) {
+        let counter = 0;
+        let node = this.head;
+
+        while (node) {
+            if (counter === index) {
+                return node;
+            }
+
+            counter++;
+            node = node.next;
+        }
+
+        return null;
+    }
 }
 
 //test
@@ -100,7 +128,6 @@ list.insertFirst('d');
 list.insertFirst('e');
 list.insertFirst('f');
 
-console.log(list.removeLast());
-console.log(list.getLast());
+console.log(list.getAt(5));
 
 module.exports = { Node, LinkedList };
