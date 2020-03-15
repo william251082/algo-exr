@@ -15,7 +15,21 @@ class LinkedList {
     }
 
     insertFirst(data) {
-        this.head = new Node(data, this.head);;
+        this.head = new Node(data, this.head);
+    }
+
+    size() {
+        let counter = 0;
+        // get reference to own node
+        let node = this.head;
+
+        while (node) {
+            counter++;
+            // look at the current node
+            node = node.next;
+        }
+
+        return counter
     }
 }
 
@@ -24,8 +38,8 @@ const nodeOne = new Node(5);
 const list = new LinkedList();
 
 list.head = nodeOne;
-list.insertFirst(15);
+list.size();
 
-console.log(list);
+console.log(list.size());
 
 module.exports = { Node, LinkedList };
