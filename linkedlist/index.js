@@ -135,6 +135,20 @@ class LinkedList {
         // connect to the current next's next
         prev.next = prev.next.next;
     }
+
+    insertAt(data, index) {
+        if (!this.head) {
+            this.head = new Node(data)
+        }
+
+        if (index === 0) {
+            this.head = new Node(data, this.head);
+            return;
+        }
+
+        const prev = this.getAt(index - 1) || this.getLast();
+        prev.next = new Node(data, prev.next);
+    }
 }
 
 //test
@@ -150,6 +164,12 @@ list.insertFirst('d');
 list.insertFirst('e');
 list.insertFirst('f');
 
-console.log(list.removeAt(5));
+console.log(list.insertAt('insertAt', 5));
+console.log(list.getAt(5));
+
+//edge cases:
+// inserting on empty node
+// index is out of bounds
+
 
 module.exports = { Node, LinkedList };
