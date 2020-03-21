@@ -27,7 +27,15 @@ class Node {
     }
 }
 
-class Tree{}
+class Tree {
+    constructor() {
+        this.root = null
+    }
+}
+
+const node = new Node(1);
+const tree = new Tree();
+tree.root = node;
 
 
 module.exports = { Tree, Node };
