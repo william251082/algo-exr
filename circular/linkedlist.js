@@ -175,4 +175,34 @@ class LinkedList {
   }
 }
 
+function circular(list) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
+
+    while (fast.next && fast.next.next) {
+      slow = slow.next;
+
+      if (slow === fast) {
+        return true;
+      }
+    }
+
+    return false;
+}
+
+const l = new LinkedList();
+l.insertLast('a');
+l.insertLast('b');
+l.insertLast('c');
+l.insertLast('d');
+console.log(circular(l));
+
+// algo
+// 1. init slow and fast to point on the first node
+// 2. if the next 2 nodes of fast is defined then enter the for loop
+// 3. move slow one node
+// 4. check if slow and fast are in the same node otherwise continue loop
+// 5. if both are pointing on the same node, it's a circular linked list
+// 6. if the next node of fast is null then it's not circular
+
 module.exports = { Node, LinkedList };
