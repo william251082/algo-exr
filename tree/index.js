@@ -42,25 +42,45 @@ class Tree {
             fn(node);
         }
     }
+
+    traverseDF(fn) {
+        const arr = [this.root];
+
+        while (arr.length) {
+            const node = arr.shift();
+            arr.unshift(...node.children);
+            fn(node);
+        }
+    }
 }
 
-const letters = [];
 const t = new Tree();
 t.root = new Node('a');
 t.root.add('b');
 t.root.add('c');
 t.root.children[0].add('d');
 
-t.traverseBF(node => {
+// t.traverseBF(node => {
+//     letters.push(node.data);
+// });
+
+t.traverseDF(node => {
     letters.push(node.data);
 });
 
 console.log(letters);
-// algo
+// algo BFT
 // 1. create an empty array and take the root node from tree and put it inside
 // 2. while there's still an element in the array, take it out the first element
-// 3. look at the recently removed element's children and put all of them in the array
+// 3. look at the recently removed element's children and push all of them at the end of the array
 // 4. throw away the recently removed element after the process
 // 5. repeat step 2
+
+
+// algo DFT
+// 1. everything is similar to BTF
+// 2. except for 3
+// 3. put the element's children in front instead of the end
+
 
 module.exports = { Tree, Node };
