@@ -31,11 +31,22 @@ class Tree {
     constructor() {
         this.root = null
     }
+
+    traverseBF(fn) {
+
+    }
 }
 
 const node = new Node(1);
 const tree = new Tree();
 tree.root = node;
 
+
+// algo
+// 1. create an empty array and take the root node from tree and put it inside
+// 2. while there's still an element in the array, take it out the first element
+// 3. look at the recently removed element's chlidrean and put all of them in the array
+// 4. throw away the recently removed element after the process
+// 5. repeat step 2
 
 module.exports = { Tree, Node };
