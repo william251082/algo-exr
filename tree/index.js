@@ -33,19 +33,33 @@ class Tree {
     }
 
     traverseBF(fn) {
+        const arr = [this.root];
 
+        while (arr.length) {
+            const node = arr.shift();
+            // push the elements of node.children, not the array itself
+            arr.push(...node.children);
+            fn(node);
+        }
     }
 }
 
-const node = new Node(1);
-const tree = new Tree();
-tree.root = node;
+const letters = [];
+const t = new Tree();
+t.root = new Node('a');
+t.root.add('b');
+t.root.add('c');
+t.root.children[0].add('d');
 
+t.traverseBF(node => {
+    letters.push(node.data);
+});
 
+console.log(letters);
 // algo
 // 1. create an empty array and take the root node from tree and put it inside
 // 2. while there's still an element in the array, take it out the first element
-// 3. look at the recently removed element's chlidrean and put all of them in the array
+// 3. look at the recently removed element's children and put all of them in the array
 // 4. throw away the recently removed element after the process
 // 5. repeat step 2
 
