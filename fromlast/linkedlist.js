@@ -154,3 +154,38 @@ class LinkedList {
 }
 
 module.exports = { Node, LinkedList };
+
+function fromLast(list, n) {
+    let slow = list.getFirst();
+    let fast = list.getFirst();
+
+    // this will determine how many spaces is fast will be ahead of slow
+    while (n > 0) {
+      fast = fast.next;
+      n--;
+    }
+
+    while (fast.next) {
+      slow = slow.next;
+      fast = fast.next
+    }
+
+    return slow;
+}
+
+const l = new LinkedList();
+l.insertLast('a');
+l.insertLast('b');
+l.insertLast('c');
+l.insertLast('d');
+l.insertLast('e');
+l.insertLast('f');
+console.log(fromLast(l, 2)); // returns { data: 'b' }
+
+// algo
+// 1. problem: return n, n is 3 spaces from the last
+// 2. set slow and fast both equal to the first
+// 3. move fast forward 3 spaces
+// 4. move slow 1 space forward then fast one space forward
+// 5. if fast is not pointing on the end node, move slow and fast 1 step forward
+// 6. if next node of fast is null then slow is now pointing at the nth element behind it
