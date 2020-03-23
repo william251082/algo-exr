@@ -46,8 +46,17 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
+    if (arr.length === 1) {
+        return arr;
+    }
 
+    const center = Math.floor(arr.length / 2);
+    // return everything from index 0 until and not including center
+    const left = arr.slice(0, center); //[97]
+    // return everything from center
+    const right = arr.slice(center);  // [0]
 
+    return merge(mergeSort(left), mergeSort(right)); // [0, 97]
 }
 
 function merge(left, right) {
