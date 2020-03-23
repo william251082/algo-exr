@@ -23,7 +23,25 @@ function bubbleSort(arr) {
     return arr;
 }
 
+// prove me wrong algo
 function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let indexOfMin = i;
+
+        for (let j = 0; j < (arr.length - i - 1); j++) {
+            // compare if the next element is less than indexOfMin then it'll be the new indexOMin
+            if (arr[j] < arr[indexOfMin]) {
+                indexOfMin = j;
+            }
+        }
+
+        // compare every element to indexOfMin
+        if (indexOfMin !== i) {
+            let lesser = arr[indexOfMin];
+            arr[indexOfMin] = arr[i];
+            arr[i] = lesser;
+        }
+    }
 
 }
 
