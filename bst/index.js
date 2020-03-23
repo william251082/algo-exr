@@ -31,7 +31,43 @@ class Node {
             this.right = new Node(data);
         }
     }
+
+    contains(data) {
+        if (data === this.data) {
+            return this;
+        }
+
+        // handle the right side
+        if (this.data < data && this.right) {
+            return this.right.contains(data);
+        // handle the left side
+        } else if (this.data > data && this.left) {
+            return this.left.contains(data);
+        }
+
+        // handle data doesn't exist
+        return null;
+    }
 }
+
+// insert test
+// const node = new Node(10);
+// node.insert(5);
+// node.insert(15);
+// node.insert(17);
+//
+// console.log(node);
+
+// contains test
+const node = new Node(10);
+node.insert(5);
+node.insert(15);
+node.insert(20);
+node.insert(0);
+node.insert(-5);
+node.insert(3);
+
+console.log(node.contains(3));
 
 module.exports = Node;
 
