@@ -11,10 +11,10 @@ class Graph {
 
     addEdge(v1, v2) {
         // directed graph
-        this.adjacencyList[v1] = [v2];
-        this.adjacencyList[v2] = [v1];
+        this.adjacencyList[v1].push(v2);
+        this.adjacencyList[v2].push(v1);
         // // undirected graph
-        // this.adjacencyList[v1] = [v2];
+        // this.adjacencyList[v1].push(v2);
     }
 
     removeEdge(v1, v2) {
@@ -26,13 +26,32 @@ class Graph {
             v => v !== v1
         );
     }
+
+    removeVertex(vertex) {
+        // prune edges with value vertex that has to be removed
+        while(this.adjacencyList[vertex].length) {
+            const adjacentVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacentVertex);
+        }
+        // delete vertex
+        delete this.adjacencyList[vertex]
+    }
 }
 
-const g = new Graph();
-g.addVertex('hi');
-g.addVertex('hi1');
-g.addVertex('hi2');
-g.addEdge('hi', 'hi1');
-g.addEdge('hi', 'hi2');
-g.removeEdge('hi', 'hi2');
-console.dir(g);
+let g = new Graph();
+g.addVertex("Dallas");
+g.addVertex("Tokyo");
+g.addVertex("Aspen");
+g.addVertex("Los Angeles");
+g.addVertex("Hong Kong");
+g.addEdge("Dallas", "Tokyo");
+g.addEdge("Dallas", "Aspen");
+g.addEdge("Hong Kong", "Tokyo");
+g.addEdge("Hong Kong", "Dallas");
+g.addEdge("Los Angeles", "Hong Kong");
+g.addEdge("Los Angeles", "Aspen");
+
+console.dir(g.adjacencyList);
+g.removeVertex("Hong Kong");
+console.dir(g.adjacencyList);
+
