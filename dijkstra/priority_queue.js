@@ -3,7 +3,7 @@ class PriorityQueue {
         this.values = [];
     }
 
-    // push ansort object element to value
+    // push and sort object element to values
     enqueue(val, priority) {
         this.values.push({val, priority});
         this.sort();
