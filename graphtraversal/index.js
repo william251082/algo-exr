@@ -128,6 +128,7 @@ g.addEdge("D","F");
 g.addEdge("E","F");
 // console.log(g.depthFirstRecursive("A"));
 // console.log(g.depthFirstIterative("A"));
+console.dir(g);
 console.log(g.breadthFirst("A"));
 
 //          A
