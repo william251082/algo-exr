@@ -23,7 +23,7 @@ const numbers = [1,2,3,4,5];
 
 
 //push
-strings.push('e'); // O(1)
+strings.push('e'); // O(1)  // sometimes O(n)
 
 //pop
 strings.pop(); // O(1)
@@ -37,3 +37,13 @@ strings.shift('x'); // removes the first el // O(n)
 strings.splice(2, 0, 'alien'); // delete el O(n)
 
 console.log(strings);
+
+
+// C++ --static array
+// int a[20];
+// int b[5] {1,2,3,4,5}
+
+// js --static array
+// on adding element, it will make a new array to add the el
+
+
