@@ -14,3 +14,9 @@ let user = {
 user.age // O(1)
 user.spell = 'ahhhh'; // O(1)
 user.scream(); // O(1)
+
+
+// hash collisions slows down reading and writing to O(n/k), k is the size of the hash table
+// fast lookup might take O(n)
+
+
