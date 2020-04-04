@@ -62,6 +62,7 @@ class HashTable {
 // for in --slow
 const myHashTable = new HashTable(50);
 myHashTable.set('grapes', 10000);
-myHashTable.set('apples', 10001);
-myHashTable.set('oranges', 9);
-console.log(myHashTable.keys());
+// myHashTable.set('apples', 10001);
+// myHashTable.set('oranges', 9);
+// console.log(myHashTable.keys());
+console.log(myHashTable.set('grapes', 10000));
