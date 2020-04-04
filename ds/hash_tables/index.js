@@ -15,8 +15,17 @@ user.age // O(1)
 user.spell = 'ahhhh'; // O(1)
 user.scream(); // O(1)
 
+//Map --> Gives you some order
+//Set --> No duplicate keys
+
 
 // hash collisions slows down reading and writing to O(n/k), k is the size of the hash table
 // fast lookup might take O(n)
 
+// Map() any data type as a key
+// Maintains insertion order
+const a = new Map();
 
+// Sets()
+// only stores the keys
+const b = new Sets();
