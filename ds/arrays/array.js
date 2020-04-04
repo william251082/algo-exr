@@ -58,16 +58,16 @@ class MyArray {
 //
 // console.log(reverse('ih'));
 
-function reverse(str){
-    if(!str || typeof str != 'string' || str.length < 2 ) return str;
-
-    const backwards = [];
-    const totalItems = str.length - 1;
-    for(let i = totalItems; i >= 0; i--){
-        backwards.push(str[i]);
-    }
-    return backwards.join('');
-}
+// function reverse(str){
+//     if(!str || typeof str != 'string' || str.length < 2 ) return str;
+//
+//     const backwards = [];
+//     const totalItems = str.length - 1;
+//     for(let i = totalItems; i >= 0; i--){
+//         backwards.push(str[i]);
+//     }
+//     return backwards.join('');
+// }
 
 // function reverse2(str){
 //     //check for valid input
@@ -79,3 +79,56 @@ function reverse(str){
 // reverse('Timbits Hi')
 // reverse('Timbits Hi')
 // reverse3('Timbits Hi')
+
+// merge sorted arrays
+function mergeSortedArrays(arr1, arr2) {
+    let new_arr = [];
+    let i=0;
+    let j=0;
+    while (i<arr1.length) {
+        if (arr1[i] < arr2[j]) {
+            console.log('arr1el',arr1[i], 'arr2el', arr2[j]);
+            new_arr.push(arr2[j]);
+        }
+        i++;
+        j++;
+    }
+
+    return new_arr;
+}
+
+
+console.log(mergeSortedArrays([0,3,4,31], [3,4,6,30]));
+
+
+// function mergeSortedArrays(array1, array2){
+//     const mergedArray = [];
+//     let array1Item = array1[0];
+//     let array2Item = array2[0];
+//     let i = 1;
+//     let j = 1;
+//
+//     //We should actually move these 2 if statements to line 2 so that we do the checks before we do assignments in line 3 and 4!
+//     if(array1.length === 0) {
+//         return array2;
+//     }
+//     if(array2.length === 0) {
+//         return array1;
+//     }
+//
+//     while (array1Item || array2Item){
+//         if(array2Item === undefined || array1Item < array2Item){
+//             mergedArray.push(array1Item);
+//             array1Item = array1[i];
+//             i++;
+//         }
+//         else {
+//             mergedArray.push(array2Item);
+//             array2Item = array2[j];
+//             j++;
+//         }
+//     }
+//     return mergedArray;
+// }
+//
+// mergeSortedArrays([0,3,4,31], [3,4,6,30]);
