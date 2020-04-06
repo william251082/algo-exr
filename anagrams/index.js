@@ -27,6 +27,7 @@ module.exports = anagrams;
 
 
 // function anagrams(stringA, stringB) {
+//     // replace special chars with empty string
 //     const strA = stringA.replace(/[^\w]/g, "").toLowerCase();
 //     const strB = stringB.replace(/[^\w]/g, "").toLowerCase();
 //     const charMapA = {};
