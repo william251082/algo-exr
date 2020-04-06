@@ -26,7 +26,25 @@ function sum_range(num) {
 //         return 2 + sum_range(1);
 //             return 1;
 
+function factorial(num) {
+    let total = 1;
+    for (let i = num; i > 0; i--) {
+        total *= i;
+    }
+    return total
+}
 
+function factorial_recursive(num) {
+    if (num === 1) { return 1; }
+    return num * factorial_recursive(num-1)
+
+}
+
+// problems
+// no base case
+// returning wrong logic
+// didn't return the base case
+// stack overflow
 
 function takeShower(){
     return "Showering!"
