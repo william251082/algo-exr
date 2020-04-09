@@ -64,3 +64,6 @@ function s_sort(arr) {
 
 
 s_sort([0,2,34,22,10,19,17]);
+
+// good for small data set, bubble selection and insertion
+// https://www.toptal.com/developers/sorting-algorithms
