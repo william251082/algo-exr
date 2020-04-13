@@ -1,0 +1,123 @@
+Summary:
+Tips:
+1. Create tons of functions
+    --break one function into little chunks, pretty soon the only way to read the code is to jump over it
+2. Use one liner adn cryptic code as much as possible
+    --remove any lines of duplicate code i.e addToNum, createFunc, createForLoop
+    -- bit manipulation
+    --!! in if statement, error check everything
+3. Use recursion
+    --make iterative recursive and vice versa
+    --make iterative recursive --make a recursive func add an extra param, iteration count, increment each cycle
+    --take the entire program and put it inside a recursive function -- program that accepts int and increments each recursive iteration, bunch of if statements, checking which line to execute and call itself again.
+4. Good use of comments
+    --add a comment that's "saying don't modify this code, it's critical", overtime, nobody can modify it but you.
+    --make a comment that don't match the code.
+5. Adding code you may need but never will
+    --additional functionalities, extrafeatures, configurations
+    --over engineer classes dog-->canine-->mammal-->fish
+    --5 different classes for a one thing, name it creatively, DogView, CanineProvider, FishInterface
+6. Lots of variables the more the better
+    --reason cache the values, be more performant
+    --adds additional complexity to a class
+    --ruin the getter functions
+7. Start to refactor the code
+    --refactor for selfish needs without understanding the software's roadmap
+
+
+set goals for 3 months
+
+Systems design
+
+web server
+1. Load balancing
+    --distribute traffic to many web servers
+    --nginx http load balancing
+    --dns load balancing --given a url, you can have it resolve to a number of different ip addresses
+db server
+2. caching
+    --db server is the one who always get down
+    --caching layer
+3. db sharding for db rights
+    --for a db where you write a lot
+    --vertical sharding --take each table and put into a new machine
+    --horizontal sharding --single table and split it into multiple machines
+        --for example. take the user id and modify the total number of machines that you want to allocate te user id to
+        --5 master machines for each table, take user id mod 5 that routes each user to a different machine
+        --no sql dbs
+assets
+3. slave-master replication
+    --single master db where you write ans slave db to read
+4. cdn
+    --for large asset files
+    --decreases the load of actual servers
+    --pull technique --first time slow then after it, fast
+    --amazon s3 for static files
+
+
+Habits
+1. Exercise
+2. Good Sleep
+3. Drink a lot of fluid to save your eyes
+4. Have exposure to sunlight during your non-productive hours such mealtime
+5. Keep back straight while sitting on chair
+6. Fix a goal and then reverse engineer the timelines and technical effort
+7. Have result-oriented goals (products which u can really ship)
+8. Keep it simple. (Write a simple code which is easy to read and debug which helps in shipping product faster)
+9. Don’t get disturbed during your highest concentration period of day by setting expectations with people around us
+10. Always keep learning. Keep your skills sharp.
+11. Get out of comfort zone
+12. Collaborate with other programmers to save time and effort
+13. Programming is a solo activity. Try spending a lot of time alone
+Habits
+1. take control and ownership --expand influence
+2. accept failure --make mistakes is a key part of success --to be ready to fail
+3. what you do at 8pm matters --it should be inline with your goals
+4. success is a lonely road while failure is a crowded highway
+5. last 10% of the project is often the hardest, finish it
+6. internal motivation, know why you want it
+7. continuously learn
+
+business
+-find influencers
+-be genuine, conversational not corporate and professional
+-optimized conversion funnel --one click buy
+-incentives
+
+design patterns
+--what are the dependencies in the program?
+--what is the data flow? --one way data flow is the best --it's quick to reason about the project
+--views shouldn't contain business logic --view is the leaf node where data flows into but never flows back upward
+--bug on business logic, it's got to be in the controller layer. bug on the ui has to be in the view layer
+--data model shouldn't have business logic, except for logic that only affects their own internal state
+--single responsibility
+--to look at the overall structure of a program, follow the ownership graph --which classes own who
+--data should flow from parent to child --as soon there are two parents modifying a single child, that can easily raise bugs and memory leaks
+Singleton
+--singleton is basically globals floating in the system
+--use dependency injection to scope the singletons a little bit more  and make them more testable
+--good for teams so anybody can create their own
+--problem is singletons can easily introduce two way data flow in your program -- singletonA is communicating with singletonB and vice versa, then it's a 2-way data flow
+--pretty soon you would be tracing events ona hundred singleton, then it will be difficult to understand how the whole system is functioning
+--think about the communication patter in your program --singletons shouldn't communicate with each other directly but they have to issue notifications and then other singletons can listen to these notifications
+--that would take care of the data flow where the data is always flowing downwards from the central notification hub
+--where singletons are passively broadcasting their own actions
+--singletons could expose a publish/subscribe interface --there's a single broadcasting object and the many other listener objects awaiting events on that --encourages one way data flow
+--another variation is delegate pattern --objects can give callbacks to another objects explaining what it's doing
+--like publish/subscribe observer pattern but there's only going to be a single delegate and there may be slightly more integration between the delegate and its host object
+Chain of Responsibility
+--often in hierarchical tree structures --standard technique for communicating event upwards
+--a child may issue the event and then the parent will try to handle it and if it can't, it will continue bubbling up it's event to its parent, grandparent, great-grandparent until it reaches the top
+--event bubbling can even be an anti pattern that you may choose to allow because it's convenient or find another workaround
+Inheritance
+--is a very poor design structure, it can get messy pretty quickly
+--you have  subclass communicating back and forth to the super class and before you know it theses inheritance become deeply tied to each other and it becaomes very difficult to start refactoring things
+--use containment pattern instead
+Lazy initialization
+--don't create object until ou need them
+Adapter pattern
+--many different types of objects, methods and apis then using an adapter, you can have them match interfaces just that you can perform a common set of operations on them
+--adapter pattern can be implemented with protocols or wrapper classes
+Factory Builder
+--catalog of what types of classes will be instantiated and when
+--useful when you're needing to create a heterogenous group of different components
