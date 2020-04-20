@@ -104,7 +104,7 @@ class SinglyLinkedList {
     //     return new_node;
     // }
 
-    // add el at the beginneing
+    // add el at the beginning
     unshift(val){
         var newNode = new Node(val);
         if(!this.head) {
@@ -143,7 +143,45 @@ class SinglyLinkedList {
         return false
     }
 
-    // in order to figure out the new tail from popping
+    // // insert a new node
+    // insert(id) {
+    //     if (id < 0 || id >= this.length) return null;
+    //     var current = this.head;
+    //     var new_node = new Node();
+    //     // index is the same as length, push  a new node to end of list
+    //     if (id === this.length) {
+    //         return current.val = new_node;
+    //     }
+    //     // index is 0 then unshift a new node to the start of the list
+    //     if (id === 0) {
+    //         return new_node.next = current;
+    //     }
+    //     // using the get method access the node at the index - 1
+    //     var node_to_replace = this.get(id-1); // prev
+    //     // set the next property on that node to be the new node
+    //     var node_to_be_connected = node_to_replace.next; // temp
+    //     // set the next property on the new node to be the previous next
+    //     node_to_replace.next = new_node;
+    //     new_node.next = node_to_be_connected;
+    //     // increment the length
+    //     this.length++;
+    //     return true;
+    // }
+
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return !!this.push(val);
+        if (index === 0) return !!this.unshift(val);
+
+        var newNode = new Node(val);
+        var prev = this.get(index - 1);
+        var temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length++;
+    }
+
+        // in order to figure out the new tail from popping
     traverse() {
         var current = this.head;
         while(current) {
@@ -163,7 +201,6 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("!");
-
 list.push(";-)");
 // list.shift();
 // SinglyLinkedList {
@@ -176,7 +213,9 @@ list.push(";-)");
 
 
 // console.log(list.get(2));
-console.log(list.set(3, 'hi'));
+// console.log(list.set(3, 'hi'));
+
+console.log(list.insert(1, 'val'));
 console.log(list);
 // console.log(list.unshift('first'));
 
