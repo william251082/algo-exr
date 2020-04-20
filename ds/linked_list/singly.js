@@ -104,6 +104,7 @@ class SinglyLinkedList {
     //     return new_node;
     // }
 
+    // add el at the beginneing
     unshift(val){
         var newNode = new Node(val);
         if(!this.head) {
@@ -115,6 +116,31 @@ class SinglyLinkedList {
         }
         this.length++;
         return this;
+    }
+
+    get(id) {
+        if (id < 0 || id >= this.length) return null;
+
+        var counter = 0;
+        // keep track of the current position as you traverse
+        var current = this.head;
+
+        while (counter !== id) {
+            current = current.next;
+            counter++;
+        }
+
+        return current;
+    }
+
+    // overwrite the val of found node
+    set(id, val) {
+        var found_node = this.get(id);
+        if (found_node) {
+            found_node.val = val;
+            return true;
+        }
+        return false
     }
 
     // in order to figure out the new tail from popping
@@ -137,6 +163,8 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("!");
+
+list.push(";-)");
 // list.shift();
 // SinglyLinkedList {
 //     head: Node { val: 'HELLO', next: Node { val: 'GOODBYE', next: null } },
@@ -144,9 +172,11 @@ list.push("!");
 //     length: 2
 // }
 // list.pop();
-list.unshift('first');
+// list.unshift('first');
 
 
+// console.log(list.get(2));
+console.log(list.set(3, 'hi'));
 console.log(list);
 // console.log(list.unshift('first'));
 
