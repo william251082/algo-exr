@@ -129,8 +129,14 @@ class SinglyLinkedList{
 
 var list = new SinglyLinkedList()
 
-list.push(100)
-list.push(201)
-list.push(250)
-list.push(350)
-list.push(999)
+list.push(100);
+list.push(201);
+list.push(250);
+list.push(350);
+list.push(999);
+
+// big0
+// insertion - O(1)
+// removal - O(1)
+// searching - O(n)
+// access - O(n)
