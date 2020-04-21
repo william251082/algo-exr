@@ -127,3 +127,12 @@ tree.DFSInOrder();
 //
 // BFS - if there are lots of nodes to keep track of
 // DFS - if there are fewer nodes to keep track of
+
+
+//uses of tree
+// DOM
+// network routing
+// abstract syntax trees
+// AI
+// fs
+// JSON
