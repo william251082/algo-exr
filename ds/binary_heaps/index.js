@@ -81,3 +81,12 @@ ER.enqueue("glass in foot",3)
 // removal - O(log n)
 // searching - O(N)
 // access -
+
+
+// BinarySearchTree
+// parents > children
+// left child < right child
+
+// Binaryheaps
+// parents > children
+// no order for children

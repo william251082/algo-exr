@@ -73,4 +73,40 @@ ht.set("violet","#DDA0DD")
 
 ht.keys().forEach(function(key){
     console.log(ht.get(key));
-})
+});
+
+function slowHash(key) {
+    for (var i = 0; i < 10000; i++) {
+        console.log("hashing....")
+    }
+    return key[0].charCodeAt(0)
+}
+
+
+// hash should be:
+// fast
+// uniformly distributed values
+// deterministic
+function hash(key, arrayLen) {
+    let total = 0;
+    for (let char of key) {
+        // map "a" to 1, "b" to 2, "c" to 3, etc.
+        // 96 will give the alphabetic ranking
+        let value = char.charCodeAt(0) - 96
+        total = (total + value) % arrayLen;
+    }
+    return total;
+}
+
+
+// improved
+function hash(key, arrayLen) {
+    let total = 0;
+    let WEIRD_PRIME = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+        let char = key[i];
+        let value = char.charCodeAt(0) - 96
+        total = (total * WEIRD_PRIME + value) % arrayLen;
+    }
+    return total;
+}

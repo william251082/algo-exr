@@ -128,6 +128,14 @@ tree.DFSInOrder();
 // BFS - if there are lots of nodes to keep track of
 // DFS - if there are fewer nodes to keep track of
 
+// BinarySearchTree
+// parents > children
+// left child < right child
+
+// Binaryheaps
+// parents > children
+// no order for children
+
 
 //uses of tree
 // DOM
@@ -136,3 +144,7 @@ tree.DFSInOrder();
 // AI
 // fs
 // JSON
+
+
+// uses of binary heap
+// priority queues
