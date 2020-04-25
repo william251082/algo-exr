@@ -34,6 +34,18 @@ class MyArray {
     }
 }
 
+const arr = new MyArray();
+arr.push(1);
+arr.push(2);
+arr.push(3);
+arr.push(4);
+arr.push(5);
+arr.push(6);
+arr.push(7);
+arr.push(8);
+
+console.log(arr);
+
 // const myArray = new MyArray();
 // myArray.push('hi');
 // myArray.push('you');
@@ -81,24 +93,24 @@ class MyArray {
 // reverse3('Timbits Hi')
 
 // merge sorted arrays
-function mergeSortedArrays(arr1, arr2) {
-    let new_arr = [];
-    let i=0;
-    let j=0;
-    while (i<arr1.length) {
-        if (arr1[i] < arr2[j]) {
-            console.log('arr1el',arr1[i], 'arr2el', arr2[j]);
-            new_arr.push(arr2[j]);
-        }
-        i++;
-        j++;
-    }
-
-    return new_arr;
-}
-
-
-console.log(mergeSortedArrays([0,3,4,31], [3,4,6,30]));
+// function mergeSortedArrays(arr1, arr2) {
+//     let new_arr = [];
+//     let i=0;
+//     let j=0;
+//     while (i<arr1.length) {
+//         if (arr1[i] < arr2[j]) {
+//             console.log('arr1el',arr1[i], 'arr2el', arr2[j]);
+//             new_arr.push(arr2[j]);
+//         }
+//         i++;
+//         j++;
+//     }
+//
+//     return new_arr;
+// }
+//
+//
+// console.log(mergeSortedArrays([0,3,4,31], [3,4,6,30]));
 
 
 // function mergeSortedArrays(array1, array2){

@@ -76,6 +76,9 @@ ER.enqueue("broken arm",2)
 ER.enqueue("glass in foot",3)
 
 
+console.log(ER)
+
+
 // big0
 // insertion - O(log n)
 // removal - O(log n)
