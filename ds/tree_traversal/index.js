@@ -77,6 +77,7 @@ class BinarySearchTree {
             if(node.left) queue.push(node.left);
             if(node.right) queue.push(node.right);
         }
+        console.log('data', data);
         return data;
     }
     DFSPreOrder(){
@@ -87,6 +88,7 @@ class BinarySearchTree {
             if(node.right) traverse(node.right);
         }
         traverse(this.root);
+        console.log('data', data);
         return data;
     }
     DFSPostOrder(){
@@ -97,6 +99,7 @@ class BinarySearchTree {
             data.push(node.value);
         }
         traverse(this.root);
+        console.log('data', data);
         return data;
     }
     DFSInOrder(){
@@ -107,6 +110,7 @@ class BinarySearchTree {
             if(node.right) traverse(node.right);
         }
         traverse(this.root);
+        console.log('data', data);
         return data;
     }
 }
@@ -119,9 +123,11 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
-tree.DFSPreOrder();
-tree.DFSPostOrder();
+tree.BFS();
+// tree.DFSPreOrder();
+// tree.DFSPostOrder();
 tree.DFSInOrder();
+console.log(tree)
 
 // time complexity of DFS and BFS is the same, only differs in space complexity
 //

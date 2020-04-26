@@ -28,7 +28,7 @@ function radixSort(nums){
     return nums;
 }
 
-radixSort([23,345,5467,12,2345,9852])
+radixSort([23,345,5467,12,2345,9852]);
 
 // O(nk) time_complexity
 // O(nk) time_complexity

@@ -1,3 +1,5 @@
+const util = require('util');
+
 class HashTable {
     constructor(size=53){
         this.keyMap = new Array(size);
@@ -70,17 +72,19 @@ ht.set("plum","#DDA0DD")
 ht.set("purple","#DDA0DD")
 ht.set("violet","#DDA0DD")
 
+console.log(util.inspect(ht, false, null, true))
 
-ht.keys().forEach(function(key){
-    console.log(ht.get(key));
-});
 
-function slowHash(key) {
-    for (var i = 0; i < 10000; i++) {
-        console.log("hashing....")
-    }
-    return key[0].charCodeAt(0)
-}
+// ht.keys().forEach(function(key){
+//     console.log(ht.get(key));
+// });
+//
+// function slowHash(key) {
+//     for (var i = 0; i < 10000; i++) {
+//         console.log("hashing....")
+//     }
+//     return key[0].charCodeAt(0)
+// }
 
 
 // hash should be:

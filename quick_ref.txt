@@ -1,0 +1,39 @@
+https://docs.google.com/document/d/1ngJ9Q8yVZNY95Wp0PAwkvTUIvx2kmxkHcWaqCAF0TM0/edit
+problem solving patterns
+    divide and conquer - divide in half, initialize a min max then move the pointer until result is found
+    frequency counter - making object counters then compare them. i.e. anagrams -> {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
+    multiple pointers - move multiple pointers. arr[i], arr[j]
+    sliding windows - crete temporary variable then update it according to logic. i.e. temp_var = max_var or a, b = a, b+a
+
+search algo
+    bubble sort - brute force, comparing current and next element linearly
+    selection sort - compare current element to next then move the pointer to the next then compare again and so on..
+    insertion sort - insert one element at a time in its correct place
+    advanced:
+    merge sort - divide array in half until there's one element per array then compare the next array element then merge them
+    quick sort - pick any element(use pivot helper) then find all element that are less than it, put it to the left then greater than elements to the right, repeat.
+        Pivot helper --where the rest of the sorted element will depend
+    radix sort - looking at the digit from the right then group them in every element bucket and
+
+data structures
+    singly linked list - object consist of head and tail node with next attribute node and a tail that has a next attribute of null --SinglyLinkedList {
+                                                                                                                            head: Node { val: 100, next: Node { val: 201, next: [Node] } },
+                                                                                                                            tail: Node { val: 999, next: null },
+                                                                                                                            length: 5
+                                                                                                                          }
+    doubly linked list - object consist of head and tail node with next and prev attribute node and a tail that has a next attribute of null --DoublyLinkedList {
+                                                                                                                                                 head: Node {
+                                                                                                                                                   val: 'Harry',
+                                                                                                                                                   next: Node { val: 'Ron', next: [Node], prev: [Circular] },
+                                                                                                                                                   prev: null
+                                                                                                                                                 },
+                                                                                                                                                 tail: Node {
+                                                                                                                                                   val: 'Hermione',
+                                                                                                                                                   next: null,
+                                                                                                                                                   prev: Node { val: 'Ron', next: [Circular], prev: [Node] }
+                                                                                                                                                 },
+                                                                                                                                                 length: 3
+                                                                                                                                               }
+    stack - FILO
+    bst - parents nodes are greater that children, left child is always less than th parent and right are greater than the parent
+

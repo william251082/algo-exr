@@ -116,6 +116,8 @@ list.push("Harry")
 list.push("Ron")
 list.push("Hermione")
 
+console.log(list)
+
 // big0
 // insertion - O(1)
 // removal - O(1)

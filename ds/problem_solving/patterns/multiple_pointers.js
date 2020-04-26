@@ -59,12 +59,14 @@ function countUniqueValues(arr){
     for(var j = 1; j < arr.length; j++){
         // move the i pointer when it's not equal to current j
         if(arr[i] !== arr[j]){
+            console.log('pointer', arr[i]);
             i++;
-            arr[i] = arr[j]
+            arr[i] = arr[j];
+            console.log('pointer moved', arr[i]);
         }
     }
     return i + 1;
 }
-countUniqueValues([1,2,2,5,7,7,99]);
-console.log(countUniqueValues([-4,-3,-2,-1,0,1,2,5]));
-console.log(countUniqueValues([1,2,2,5,7,7,99]));
+// countUniqueValues([1,2,2,5,7,7,99]);
+console.log(countUniqueValues([-4,-3,-2,-1,0,1,2,5,5]));
+// console.log(countUniqueValues([1,2,2,5,7,7,99]));

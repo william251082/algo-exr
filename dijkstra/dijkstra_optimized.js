@@ -1,3 +1,5 @@
+const util = require('util');
+
 class WeightedGraph {
     constructor() {
         this.adjacencyList = {};
@@ -148,6 +150,7 @@ graph.addEdge("D","F", 1);
 graph.addEdge("E","F", 1);
 
 
+console.log(util.inspect(graph, false, null, true));
 console.log(graph.Dijkstra("A", "E"));
 
 

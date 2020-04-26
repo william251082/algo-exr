@@ -68,6 +68,7 @@ node.insert(-5);
 node.insert(3);
 
 console.log(node.contains(3));
+console.log(node);
 
 module.exports = Node;
 
