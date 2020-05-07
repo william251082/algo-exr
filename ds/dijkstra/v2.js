@@ -70,14 +70,23 @@ class PriorityQueue {
         this.bubbleUp();
     }
     bubbleUp(){
+        // get the index of the recently pushed last value
         let idx = this.values.length - 1;
+        // get the value of that last value
         const element = this.values[idx];
+        // when index of last value is greater than zero
         while(idx > 0){
+            // get the parent index
             let parentIdx = Math.floor((idx - 1)/2);
+            // get the value of current parent
             let parent = this.values[parentIdx];
+            // check if last el priority is greater than current parent priority, if not stop the loop
             if(element.priority >= parent.priority) break;
+            // put the last element on the parent index
             this.values[parentIdx] = element;
+            // put the value of current parent on the last pushed value
             this.values[idx] = parent;
+            // update the index of the last pushed value to be the parent index
             idx = parentIdx;
         }
     }
@@ -90,7 +99,9 @@ class PriorityQueue {
         }
         return min;
     }
+    // from the last node swapping up i.e. F to A, E to B so on...
     sinkDown(){
+        // get root element
         let idx = 0;
         const length = this.values.length;
         const element = this.values[0];

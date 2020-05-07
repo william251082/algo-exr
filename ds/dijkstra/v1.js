@@ -54,6 +54,7 @@ class WeightedGraph {
                 }
                 break;
             }
+            // loop over current vertex neighbors
             if(smallest || distances[smallest] !== Infinity){
                 for(let neighbor in this.adjacencyList[smallest]){
                     //find neighboring node
@@ -94,6 +95,35 @@ graph.addEdge("D","F", 1);
 graph.addEdge("E","F", 1);
 
 
-graph.Dijkstra("A", "E");
+console.log(graph.Dijkstra("A", "E"));
 
 // ["A", "C", "D", "F", "E"]
+
+
+// WeightedGraph {
+//     adjacencyList: {
+//         A: [ { node: 'B', weight: 4 }, { node: 'C', weight: 2 } ],
+//             B: [ { node: 'A', weight: 4 }, { node: 'E', weight: 3 } ],
+//             C: [
+//             { node: 'A', weight: 2 },
+//             { node: 'D', weight: 2 },
+//             { node: 'F', weight: 4 }
+//         ],
+//             D: [
+//             { node: 'C', weight: 2 },
+//             { node: 'E', weight: 3 },
+//             { node: 'F', weight: 1 }
+//         ],
+//             E: [
+//             { node: 'B', weight: 3 },
+//             { node: 'D', weight: 3 },
+//             { node: 'F', weight: 1 }
+//         ],
+//             F: [
+//             { node: 'C', weight: 4 },
+//             { node: 'D', weight: 1 },
+//             { node: 'E', weight: 1 }
+//         ]
+//     }
+// }
+// [ 'A', 'C', 'D', 'F', 'E' ]
